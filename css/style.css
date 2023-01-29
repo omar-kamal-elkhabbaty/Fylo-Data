@@ -1,0 +1,186 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+body{
+    background-color: #0c122c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 20px;
+}
+.bg{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: url("../images/bg-desktop.png") no-repeat;
+    background-size: cover;
+    height: 50%;
+    z-index: -1;
+}
+.attribution{
+    position: absolute;
+    bottom: 20px;
+    color: #FFF;
+    text-align: center;
+    font-size: 13px;
+}
+.attribution a{
+    color: #1e40d5
+}
+.fylo{
+    background-color: #1e2c69;
+    width: 350px;
+    padding: 40px 140px 40px 40px;
+    border-radius: 15px 84px 15px 15px;
+    transform: translateY(-20px);
+}
+.fylo .logo{
+    margin-bottom: 20px;
+}
+.fylo .icons{
+    display: flex;
+    justify-content: space-between;
+}
+.icons div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #0c122c;
+}
+.used{
+    background-color: #1e2c69;
+    width: 500px;
+    padding: 40px 40px 28px 50px;
+    border-radius: 15px 15px 15px 15px;
+    margin-left: 30px;
+    position: relative;
+}
+.left{
+    position: absolute;
+    top: -55px;
+    right: 40px;
+    padding: 20px;
+    font-size: 35px;
+    color: #0c122c;
+    font-weight: 800;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+.left span{
+    font-size: 13px;
+    color :#848794;
+}
+.left::before{
+    content: "";
+    position: absolute;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent #FFF transparent transparent;
+    bottom: -20px;
+    right: 0;
+}
+
+.used p span{
+    font-weight: 700;
+}
+.used p{
+    color: #FFF;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.rate-father{
+    width: 100%;
+    border-radius: 10px;
+    background-color: #0c122c;
+    position: relative;
+    margin-bottom: 30px;
+}
+.rate-father::after{
+    content: "1000  GB";
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    font-size: 12px;
+    color: #FFF;
+    font-weight: 700;
+}
+.rate-father::before{
+    content: "0 GB";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 12px;
+}
+.rate{
+    animation: rate 1.3s ease-in-out;
+    animation-fill-mode: forwards;
+    padding: 7px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%) , hsl(335, 100%, 65%));
+    position: relative;
+}
+.rate::after{
+    content: "";
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px;
+    background-color: #FFF;
+    border-radius: 50%;
+}
+@media (min-width: 601px) and (max-width: 850px){
+    body{
+        flex-flow: column wrap;
+        justify-content: space-evenly;
+    }
+}
+@media(max-width: 600px){
+    body{
+        flex-flow: column wrap;
+        justify-content: center;
+        background: url("../images/bg-mobile.png") no-repeat;
+        background-size: cover;
+        padding: 0 10px;
+    }
+    .bg{
+        display: none;
+    }
+    .left{
+        top: 77%;
+        right: 50%;
+        transform: translateX(50%);
+        font-size: 25px;
+    }
+    .left::before{
+        display: none;
+    }
+    .fylo{
+        width: 350px;
+    }
+    .logo img{
+        height: 40px;
+    }
+    .used{
+        margin-left: 0;
+        width: 350px;
+    }
+    .attribution{
+        font-size: 10px;
+    }
+}
+@keyframes rate{
+    from{
+        width: 0%;
+    }
+    to{ 
+        width: 85%;
+    }
+}
